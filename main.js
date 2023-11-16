@@ -56,3 +56,59 @@ const usersXeno = [{
         age: 25
     }
 ];
+
+const tabData = [];
+tabData.push(usersHuman,usersPet,usersXeno);
+
+function afficherHumain(humains) {
+    console.log("--- -- -");
+    console.log("Nom:",humains.name);
+    console.log("Email:",humains.email);
+    console.log("Âge:",humains.age);
+}
+
+function afficherAnimal(animaux) {
+    console.log("--- -- -");
+    console.log("Nom:",animaux.name);
+    console.log("Espèce:",animaux.espece);
+    console.log("Âge:",animaux.age);
+    console.log("Proprio:",animaux.propriétaire);
+}
+
+function afficherXeno(xenos) {
+    console.log("--- -- -");
+    console.log("Nom:",xenos.name);
+    console.log("Espèce:",xenos.espece);
+    console.log("Âge:",xenos.age);
+    console.log("Niv de menace:",xenos.menace);
+}
+
+function profil(tab) {
+    for(let i = 0; i < tab.length; i++) {
+        if(tab[i].type == "humain") {
+            afficherHumain(tab[i]);
+        } else if (tab[i].type == "animal de compagnie") {
+            afficherAnimal(tab[i]);
+        } else if (tab[i].type == "Xeno") {
+            afficherXeno(tab[i]);
+        } else {
+            console.log("Type de Profil non Existant");
+        }
+    }
+}
+
+console.log("Tests profil(x):");
+profil(usersHuman);
+profil(usersPet);
+profil(usersXeno);
+
+console.log("------------------------------------ ---- --- -- -");
+
+function profilAll(grandTab) {
+    for(let i = 0; i < grandTab.length; i++) {
+        profil(grandTab[i]);
+    }
+}
+
+console.log("Test profilAll(y):");
+profilAll(tabData);
